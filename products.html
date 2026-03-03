@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chayma's Store</title>
+
+<link href="https://fonts.googleapis.com/css?family=Playfair Display|Montserrat|Parisienne" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "PlayFair Display";
+    margin: 0px;
+    
+}
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+    background: #fdf9f4;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    z-index:100;
+}
+.navbar a{ 
+    color: #d4af7f;
+}
+.searchbr{
+    margin-top: 100px;
+}
+.products div{
+    width: 150px;
+    height: 400px;
+}
+.products div img{
+    width: 140px;
+    height: 150px;
+}
+.products{
+    width: 97%;
+    margin-top: 130px;
+    margin-left: 8px;
+    display: grid;
+    grid-template-columns: repeat( 2,1fr)
+}
+.products div h3{
+    font-family: "Montserrat";
+    
+    font-weight: bolder;
+}
+.products div p{
+    font-family: "Montserrat";
+    
+    font-weight: bolder;
+}
+#cart-count{
+    position:fixed;
+    width: 1.4rem;
+    height: 1.4rem;
+    background:rgba(255, 255, 255, 0.562);
+    color:rgb(255, 0, 0);
+    font-size:15px;
+    border-radius:50%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    margin-left: 1px;
+    justify-content: center;
+    
+}
+.products button{
+    height: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100px;
+    background: #fdf9f4;
+    color: #d4af7f;
+}
+.nav2{
+    position: fixed;
+    top: 80px; 
+    width: 100%;
+    background-color: #fdf9f4;
+  
+    justify-content: center;
+    
+    margin-left: 6px;
+    z-index: 99;
+    padding-left: 0px;
+    gap: 7px;
+    display: grid;
+    grid-template-columns: repeat( 8,1fr)
+}
+
+.nav2 a{
+    color: #d4af7f;
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-size: 9px;
+    transition: 0.3s;
+    padding-left: 0px;
+    margin-right: 10px;
+}
+.nav2 a:hover{
+    color: #f5efe6;
+}
+.nav2 div{
+    font-size: 10px;
+    
+}
+@media (min-width:768px){
+     .products{
+         grid-template-columns: repeat( 4,1fr);
+}
+     .nav2{
+         gap: 40px;
+       } 
+       .nav2 a{
+         font-size: 15px;}
+
+}
+   
+</style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="contact.html"> <i class="fa-solid fa-phone"> </i></a>
+        <h2> Chayma's Store </h2>
+        <a href="products.html"> <i class="fa-solid fa-store"></i></a>
+        <a href="cart.html"> <i class="fa-solid fa-bag-shopping">  <span id="cart-count">0</span> </i></a>
+    </header>
+    <div id="message" style="
+position: fixed;
+top: 80px;
+right: 20px;
+background: #4caf50;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+display: none;
+z-index: 999;
+"> Product added to cart
+</div>
+<header class="nav2">
+    
+<a href="IBRAQ.html">  Ibrahim ElQurachi</a></div>
+
+<a href="vs.html" >  Victoria Secret</a></div>
+<div>
+<a href="abq.html"  >  Abd <br> Essamad ElQurashi</a></div>
+<div>
+<a href="bathnbody.html" >  Bath & Body Works </a></div>
+<div>
+<a href="Am.html"> Atyab  El Marshoud</a></div>
+<div>
+<a href="tanayan.html" > Thnyan</a></div>
+<div>
+<a href="asateer.html"> Asateer </a></div>
+</header>
+    <section class="products">
+      <div class="div1">
+         <img src="misk1.jpg" style="width: 200px;" alt="this is a product photo">
+         <h3> Musk Al-Lail </h3>
+          <p> Prix: 250dh</p>
+          <button onclick="addToCart('Musk Al-Lail',250,'misk1.jpg')">
+            Add to Cart
+        </button>
+
+     </div>
+     <div class="div2">
+           <img src="misk8.jpg" alt="this is a product photo">
+           <h3> Musk Abaq Al-Rumman </h3>
+           <p> Prix: 250dh</p>
+           <button onclick="addToCart('Musk Abaq Al-AL-Rumman',250,'misk8.jpg')">
+            Add to Cart
+        </button>
+     </div>
+        <div class="div3">
+            <img src="misk3.jpg" alt="this is a product photo">
+            <h3> Musk Blue </h3>
+            <p>Prix: 250dh</p>
+            <button onclick="addToCart('Musk Blue',250,'misk3.jpg')">
+                Add to Cart
+            </button>
+     </div>
+        <div class="div4">
+                <img src="misk2.jpg" alt="this is a product photo">
+                <h3> Musk Al-Fajr </h3>
+                <p>Prix: 250dh</p>
+                <button onclick="addToCart('Musk Al-Fajr',250,'misk2.jpg')">
+                    Add to Cart
+                </button>
+        </div>
+        <div class="div5">
+            <img src="e.jpg" style="width: 200px;" alt="this is a product photo">
+            <h3> IBRAQ Musk collection  </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart('IBRAQ Musk collection',550,'e.jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div6">
+            <img src="misk (18).jpg" alt="this is a product photo">
+            <h3> IBRAQ diamond collection  </h3>
+            <p>Prix: 950dh</p>
+            <button onclick="addToCart('IBRAQ diamond collection',950,'misk (18).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div7">
+            <img src="misk (6).jpg" alt="this is a product photo">
+            <h3> IBRAQ diamond collection  </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart('IBRAQ diamond collection',550,'misk (6).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div8">
+            <img src="misk (7).jpg" alt="this is a product photo">
+            <h3> IBRAQ Musk collection  </h3>
+            <p>Prix: 450dh</p>
+            <button onclick="addToCart('IBRAQ Musk collection',450,'misk (7).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div9">
+            <img src="misk (19).jpg" alt="this is a product photo">
+            <h3> IBRAQ Zouyout collection  </h3>
+            <p>Prix: 450dh</p>
+            <button onclick="addToCart('IBRAQ Zouyout collection',450,'misk (19).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div10">
+            <img src="misk (20).jpg" style="height: 180px;" alt="this is a product photo">
+            <h3> IBRAQ Summer Ocean collection  </h3>
+            <p>Prix: 300dh</p>
+            <button onclick="addToCart('IBRAQ Summer Ocean collection',300,'misk (20).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div11">
+            <img src="misk (9).jpg" style="height: 180px;" alt="this is a product photo">
+            <h3> IBRAQ Summer Ocean collection  </h3>
+            <p>Prix: 300dh</p>
+            <button onclick="addToCart('IBRAQ Summer Ocean collection',300,'misk (9).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div12">
+            <img src="misk (21).jpg" alt="this is a product photo">
+            <h3> Purple heart Diamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Purple heart Diamond ',600,'misk (21).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div13">
+            <img src="misk (10).jpg" alt="this is a product photo">
+            <h3> White Regent Diaamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('White Regent Diaamond ',600,'misk (10).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div14">
+            <img src="misk (11).jpg" alt="this is a product photo">
+            <h3> Emerald Soul Diamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Emerald Soul Diamond',600,'misk (11).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div15">
+            <img src="misk (12).jpg" alt="this is a product photo">
+            <h3> Nude Coral Diamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Nude Coral Diamond',600,'misk (12).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div16">
+            <img src="misk (13).jpg" alt="this is a product photo">
+            <h3> Pink Diamond Sakura </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Pink Diamond Sakura',600,'misk (13).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div17">
+            <img src="misk (22).jpg" alt="this is a product photo">
+            <h3> Sugar Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Sugar Musk',380,'misk (22).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div18">
+            <img src="misk (14).jpg" alt="this is a product photo">
+            <h3> Blueberry Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Blueberry Musk',380,'misk (14).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div19">
+            <img src="misk (15).jpg" alt="this is a product photo">
+            <h3> Rasberry Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Rasberry Musk',380,'misk (15).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div20">
+            <img src="misk (16).jpg" alt="this is a product photo">
+            <h3> Powder Musk  </h3>
+            <p> Prix: 380dh</p>
+            <button onclick="addToCart('Powder Musk',380,'misk (16).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div21">
+            <img src="misk (17).jpg" alt="this is a product photo">
+            <h3> White Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('White Musk',380,'misk (17).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div22">
+            <img src="misk (23).jpg" alt="this is a product photo">
+            <h3> Abaq AL-Rumman Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Abaq AL-Rumman Musk',380,'misk (23).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div23">
+            <img src="misk (24).jpg" alt="this is a product photo">
+            <h3> Vintage Tobacco  </h3>
+            <p>Prix: 1200dh</p>
+            <button onclick="addToCart('Vintage Tobacco',1200,'misk (24).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div24">
+            <img src="bd (1).jpg" style="height: 180px;" alt="this is a product photo">
+            <h3> Into The Night Mist + body lotion  </h3>
+            <p>Prix: 360dh</p>
+            <button onclick="addToCart('Into The Night Mist + body lotion',360,'bd (1).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div25">
+            <img src="bd (2).jpg"  style="height: 180px; width: 140px;" alt="this is a product photo">
+            <h3> Dark kiss fragrance Mist  </h3>
+            <p>Prix: 180dh</p>
+            <button onclick="addToCart('Dark kiss fragrance Mist',180,'bd (2).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div26">
+            <img src="bd (3).jpg" style="height: 180px; width: 160px;" alt="this is a product photo">
+            <h3> Warm Vanilla Sugar fragrance Mist  </h3>
+            <p> Prix: 180dh</p>
+            <button onclick="addToCart('Warm Vanilla Sugar fragrance Mist',180,'bd (3).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div27">
+            <img src="bd (4).jpg"  style="height: 180px; width: 140px;" alt="this is a product photo">
+            <h3> Winter Candy Apple fragrance Mist  </h3>
+            <p>Prix: 180dh</p>
+            <button onclick="addToCart('Winter Candy Apple fragrance Mist',180,'bd (4).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div28">
+            <img src="bd (5).jpg"  style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Sweetest Song Gift Set  </h3>
+            <p>Prix: 540dh</p>
+            <button onclick="addToCart('Sweetest Song Gift Set',540,'bd (5).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div29">
+            <img src="bd (6).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Pure Wonder Gift Set  </h3>
+            <p>Prix: 540dh</p>
+            <button onclick="addToCart('Pure Wonder Gift Set',540,'bd (6).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div30">
+            <img src="bd (7).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> into the Night Gift Set  </h3>
+            <p>Prix: 540dh</p>
+            <button onclick="addToCart('into the Night Gift Set',540,'bd (7).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div31">
+            <img src="bd (8).jpg" alt="this is a product photo">
+            <h3> into the Night fragrance Mist  </h3>
+            <p>180dh</p>
+            <button onclick="addToCart('into the Night fragrance Mist',180,'bd (8).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div32">
+            <img src="bd (9).jpg" style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Japanese Cherry Blossom Gift Set  </h3>
+            <p>Prix: 540dh</p>
+            <button onclick="addToCart('Japanese Cherry Blossom Gift Set',540,'bd (9).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div33">
+            <img src="bd (10).jpg"style="height: 180px; width: 140px;" alt="this is a product photo">
+            <h3> cardigan blush </h3>
+            <p>Prix: 180dh</p>
+            <button onclick="addToCart(' cardigan blush',180,'bd (10).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div34">
+            <img src="bd (11).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Dark Kiss Gift Set  </h3>
+            <p>Prix: 540dh</p>
+            <button onclick="addToCart(' Dark Kiss Gift Set',540,'bd (11).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div35">
+            <img src="ASATEER (1).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Asateer - Queen Of Dunes  </h3>
+            <p>Prix: 850dh</p>
+            <button onclick="addToCart(' Asateer - Queen Of Dunes',850,'ASATEER (1).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div36">
+            <img src="ASATEER (2).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Asateer - Musk El Maha </h3>
+            <p>Prix: 450dh</p>
+            <button onclick="addToCart('Asateer - Musk El Maha',450,'ASATEER (2).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div36">
+            <img src="ASATEER (3).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Asateer - Queen Of Arabia  </h3>
+            <p>Prix: 850dh</p>
+            <button onclick="addToCart(' Asateer - Queen Of Arabia',850,'ASATEER (3).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div37">
+            <img src="VS (1).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Pure Seduction Fragrance Lotion </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart(' VS - Pure Seduction Fragrance Lotion',200,'VS (1).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div38">
+            <img src="VS (2).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> vs - Pure Seduction Body Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart('vs - Pure Seduction Body Mist',200,'VS (2).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div39">
+            <img src="VS (3).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Rush Body Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart(' VS - Rush Body Mist',200,'VS (3).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div40">
+            <img src="VS (4).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Romantic Fragrance Lotion  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart('VS - Romantic Fragrance Lotion',200,'VS (4).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div41">
+            <img src="VS (5).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Temptation Shimmer Fragrance Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart(' VS - Temptation Shimmer Fragrance Mist',200,'VS (5).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div42">
+            <img src="VS (6).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Aqua Kiss Shimmer Fragrance Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart(' VS - Aqua Kiss Shimmer Fragrance Mist ',200,'VS (6).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div43">
+            <img src="VS (7).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Midnight Bloom Shimmer Fragrance Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart('VS - Midnight Bloom Shimmer Fragrance Mist',200,'VS (7).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div44">
+            <img src="VS (9).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Velvet Petals Shimmer Fragrance Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart(' VS - Velvet Petals Shimmer Fragrance Mist',200,'VS (9).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div45">
+            <img src="VS (8).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Amber Romance Shimmer Fragrance Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart('VS - Amber Romance Shimmer Fragrance Mist',200,'VS (9).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div46">
+            <img src="VS (10).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS - Bare Vanilla Shimmer Fragrance Mist  </h3>
+            <p>Prix: 200dh</p>
+            <button onclick="addToCart('  VS - Bare Vanilla Shimmer Fragrance Mist',200,'VS (10).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div47">
+            <img src="VS (11).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> VS -  Velvet Petals Mini Pack Fragrance Mist + Body Lotion  </h3>
+            <p>Prix: 250dh</p>
+            <button onclick="addToCart('VS -  Velvet Petals Mini Pack Fragrance Mist + Body Lotion',250,'VS (11).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div48">
+            <img src="VS (12).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  VS -  Love Spell Mini Pack Fragrance Mist + Body Lotion   </h3>
+            <p>Prix: 250dh</p>
+            <button onclick="addToCart(' VS -  Love Spell Mini Pack Fragrance Mist + Body Lotion  ',250,'VS (12).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div49">
+            <img src="VS (13).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  VS -  Aqua Kiss Mini Pack Fragrance Mist + Body Lotion   </h3>
+            <p>Prix: 250dh</p>
+            <button onclick="addToCart('VS -  Aqua Kiss Mini Pack Fragrance Mist + Body Lotion ',250,'VS (13).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div50">
+            <img src="VS (15).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  VS -  Pure Seduction Mini Pack Fragrance Mist + Body Lotion   </h3>
+            <p>Prix: 250dh</p>
+            <button onclick="addToCart('VS -  Pure Seduction Mini Pack Fragrance Mist + Body Lotion  ',250,'VS (15).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div51">
+            <img src="ATYB (1).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  Atyab ElMarshoud - Pink Pack Body Oil + Scented Powder   </h3>
+            <p>Prix: 1500dh</p>
+            <button onclick="addToCart('Atyab ElMarshoud - Pink Pack Body Oil + Scented Powder   ',1500,'ATYB (1).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div52">
+            <img src="ATYB (3).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  Atyab ElMarshoud - Burning Black Fragrance Ramadan Edition   </h3>
+            <p>Prix: 750dh</p>
+            <button onclick="addToCart(' Atyab ElMarshoud - Burning Black Fragrance Ramadan Edition ',750,'ATYB (3).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div53">
+            <img src="ATYB (4).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  Atyab ElMarshoud - Khisla Silver Hair Mist   </h3>
+            <p>Prix: 870dh</p>
+            <button onclick="addToCart(' Atyab ElMarshoud - Khisla Silver Hair Mist  ',870,'ATYB (4).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div=54">
+            <img src="ATYB (5).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  Atyab ElMarshoud - Khisla Purple Hair Mist   </h3>
+            <p>Prix: 870dh</p>
+            <button onclick="addToCart('Atyab ElMarshoud - Khisla Purple Hair Mist ',870,'ATYB (5).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=55">
+            <img src="ATYB (6).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  Atyab ElMarshoud - Khisla All In All Hair Mist   </h3>
+            <p>Prix: 870dh</p>
+            <button onclick="addToCart('Atyab ElMarshoud - Khisla All In All Hair Mist ',870,'ATYB (6).jpg')">
+                Add to Cart
+            </button>
+        </div><div class="div=56">
+            <img src="ATYB (10).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  Atyab ElMarshoud -  PINK Eau De Parfum   </h3>
+            <p>Prix: 1300dh</p>
+            <button onclick="addToCart('Atyab ElMarshoud - PINK Eau De Parfum ',1300,'ATYB (10).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=58">
+            <img src="ABDQ (1).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  AbdEssamad ElQurashi - Tibr Malaki   </h3>
+            <p>Prix: 500dh</p>
+            <button onclick="addToCart(' AbdEssamad ElQurashi - Tibr Malaki ',500,'ABDQ (1).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=59">
+            <img src="ABDQ (2).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  AbdEssamad ElQurashi - Satin Body Oud   </h3>
+            <p>Prix: 1300dh</p>
+            <button onclick="addToCart(' AbdEssamad ElQurashi - Satin Body Oud ',1300,'ABDQ (2).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=60">
+            <img src="ABDQ (4).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  AbdEssamad ElQurashi - Rannat Khilkhal   </h3>
+            <p>Prix: 1300dh</p>
+            <button onclick="addToCart('AbdEssamad ElQurashi - Rannat Khilkhal ',1300,'ABDQ (4).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=61">
+            <img src="roshn.jpeg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Thnyan - Roshn   </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart(' Thnyan - Roshn  ',550,'roshn.jpeg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=62">
+            <img src="mamnoue.jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Thnyan - ممنوع </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart('Thnyan - mamnoue' ,550 , 'mamnoue.jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=63">
+            <img src="thnyan.jpeg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3> Thnyan - All Of You 1pc   </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart('  Thnyan - All Of You 1pc  ',550,'thnyan.jpeg')">
+                Add to Cart
+            </button>
+        </div>
+        
+        
+    </section>
+    
+    
+    <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    function updateCartCount(){
+        document.getElementById("cart-count").innerText = cart.length;
+    }
+    
+    function showMessage(text){
+        const msg = document.getElementById("message");
+        msg.innerText = text;
+        msg.style.display = "block";
+           setTimeout(()=>{
+          msg.style.display = "none";
+         },2000);
+    }
+      function addToCart(name, price, image){
+          const existing = cart.find(item => item.name === name);
+      
+    
+        if(existing){
+            existing.quantity += 1;
+        } else {
+            cart.push({name, price, image, quantity:1});
+        }
+    
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showMessage("Product added to cart!");
+    }
+    
+    updateCartCount();
+    </script>
+    
+    </body>
+    </html>

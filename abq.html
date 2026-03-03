@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chayma's Store</title>
+
+<link href="https://fonts.googleapis.com/css?family=Playfair Display|Montserrat|Parisienne" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "PlayFair Display";
+    margin: 0px;
+    
+}
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+    background: #fdf9f4;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    z-index:100;
+}
+.navbar a{ 
+    color: #d4af7f;
+}
+.searchbr{
+    margin-top: 100px;
+}
+.products div{
+    width: 170px;
+    height: 300px;
+}
+.products div img{
+    width: 150px;
+    height: 150px;
+}
+.products{
+    width: 97%;
+    margin-top: 130px;
+    margin-left: 8px;
+    display: grid;
+    grid-template-columns: repeat( 2,1fr)
+}
+.products div h3{
+    font-family: "Montserrat";
+    
+    font-weight: bolder;
+}
+.products div p{
+    font-family: "Montserrat";
+    
+    font-weight: bolder;
+}
+#cart-count{
+    position:fixed;
+    width: 1.4rem;
+    height: 1.4rem;
+    background:rgba(255, 255, 255, 0.562);
+    color:rgb(255, 0, 0);
+    font-size:15px;
+    border-radius:50%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    margin-left: 1px;
+    justify-content: center;
+    
+}
+.products button{
+    height: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100px;
+    background: #fdf9f4;
+    color: #d4af7f;
+}
+.nav2{
+    position: fixed;
+    top: 80px; 
+    width: 100%;
+    background-color: #fdf9f4;
+  
+    justify-content: center;
+    
+    margin-left: 6px;
+    z-index: 99;
+    padding-left: 0px;
+    gap: 7px;
+    display: grid;
+    grid-template-columns: repeat( 8,1fr)
+}
+
+
+.nav2 a{
+    color: #d4af7f;
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-size: 9px;
+    transition: 0.3s;
+}
+.nav2 a:hover{
+    color: white;
+}
+
+.nav2{
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat( 8,1fr)
+
+}
+@media (min-width:768px){
+     .products{
+         grid-template-columns: repeat( 4,1fr)
+}
+   .nav2{ gap: 40px;}}
+</style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="contact.html"> <i class="fa-solid fa-phone"> </i></a>
+        <h2> Chayma's Store </h2>
+        <a href="products.html"> <i class="fa-solid fa-store"></i></a>
+        <a href="cart.html"> <i class="fa-solid fa-bag-shopping">  <span id="cart-count">0</span> </i></a>
+    </header>
+    <div id="message" style="
+position: fixed;
+top: 80px;
+right: 20px;
+background: #4caf50;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+display: none;
+z-index: 999;
+"> Product added to cart
+</div>
+<header class="nav2">
+  
+    <a  href="IBRAQ.html" >  Ibrahim ElQurachi</a>
+  
+  
+ <a href="vs.html" >  Victoria  Secret</a> 
+ <a href="abq.html" style="color: #D5AFDD;"  >  AbdEssamad  ElQurashi</a>
+ <a href="bathnbody.html" >  Bath &  Body Works </a>
+ <a href="Am.html"> Atyab  El Marshoud</a>
+ <a href="tanayan.html"> Thnyan</a>
+ <a href="asateer.html"> Asateer </a>
+</header>
+    <section class="products">
+        <div class="div=58" style="height: 200px;">
+            <img src="ABDQ (1).jpg"style="height: 170px; width: 140px;" alt="this is a product photo">
+            <h3>  AbdEssamad ElQurashi - Tibr Malaki   </h3>
+            <p>Prix: 500dh</p>
+            <button style="margin-bottom: 30px;" onclick="addToCart(' AbdEssamad ElQurashi - Tibr Malaki ',500,'ABDQ (1).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=59" >
+            <img src="ABDQ (2).jpg"style="height: 170px; width: 140px;" alt="this is a product photo">
+            <h3>  AbdEssamad ElQurashi - Satin Body Oud   </h3>
+            <p>Prix: 1300dh</p>
+            <button onclick="addToCart(' AbdEssamad ElQurashi - Satin Body Oud ',1300,'ABDQ (2).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div=60">
+            <img src="ABDQ (4).jpg"style="height: 190px; width: 140px;" alt="this is a product photo">
+            <h3>  AbdEssamad ElQurashi - Rannat Khilkhal   </h3>
+            <p>Prix: 1300dh</p>
+            <button onclick="addToCart('AbdEssamad ElQurashi - Rannat Khilkhal ',1300,'ABDQ (4).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        </section>
+        <script>
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            function updateCartCount(){
+                document.getElementById("cart-count").innerText = cart.length;
+            }
+            
+            function showMessage(text){
+                const msg = document.getElementById("message");
+                msg.innerText = text;
+                msg.style.display = "block";
+                   setTimeout(()=>{
+                  msg.style.display = "none";
+                 },2000);
+            }
+              function addToCart(name, price, image){
+                  const existing = cart.find(item => item.name === name);
+              
+            
+                if(existing){
+                    existing.quantity += 1;
+                } else {
+                    cart.push({name, price, image, quantity:1});
+                }
+            
+                localStorage.setItem("cart", JSON.stringify(cart));
+                updateCartCount();
+                showMessage("Product added to cart!");
+            }
+            
+            updateCartCount();
+            </script>
+            
+        </body>
+        </html>

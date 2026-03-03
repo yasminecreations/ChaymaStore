@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chayma's Store</title>
+
+<link href="https://fonts.googleapis.com/css?family=Playfair Display|Montserrat|Parisienne" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "PlayFair Display";
+    margin: 0px;
+    
+}
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:80px;
+    background: #fdf9f4;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    z-index:100;
+}
+.navbar a{ 
+    color: #d4af7f;
+}
+.searchbr{
+    margin-top: 100px;
+}
+.products div{
+    width: 170px;
+    height: 300px;
+}
+.products div img{
+    width: 150px;
+    height: 150px;
+}
+.products{
+    width: 97%;
+    margin-top: 130px;
+    margin-left: 8px;
+    display: grid;
+    grid-template-columns: repeat( 2,1fr)
+}
+.products div h3{
+    font-family: "Montserrat";
+    
+    font-weight: bolder;
+}
+.products div p{
+    font-family: "Montserrat";
+    
+    font-weight: bolder;
+}
+#cart-count{
+    position:fixed;
+    width: 1.4rem;
+    height: 1.4rem;
+    background:rgba(255, 255, 255, 0.562);
+    color:rgb(255, 0, 0);
+    font-size:15px;
+    border-radius:50%;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    margin-left: 1px;
+    justify-content: center;
+    
+}
+.products button{
+    height: 30px;
+    margin-left: 40px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100px;
+    background: #fdf9f4;
+    color: #d4af7f;
+}
+.nav2{
+    position: fixed;
+    top: 80px; 
+    width: 100%;
+    background-color: #fdf9f4;
+  
+    justify-content: center;
+    
+    margin-left: 6px;
+    z-index: 99;
+    padding-left: 0px;
+    gap: 7px;
+    display: grid;
+    grid-template-columns: repeat( 8,1fr)
+}
+
+
+.nav2 a{
+    color: #d4af7f;
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-size: 9px;
+    transition: 0.3s;
+}
+.nav2 a:hover{
+    color: white;
+}
+
+.nav2{
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat( 8,1fr)
+
+}
+@media (min-width:768px){
+     .products{
+         grid-template-columns: repeat( 4,1fr)
+}
+   .nav2{ gap: 40px;}}
+</style>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="contact.html"> <i class="fa-solid fa-phone"> </i></a>
+        <h2> Chayma's Store </h2>
+        <a href="products.html"> <i class="fa-solid fa-store"></i></a>
+        <a href="cart.html"> <i class="fa-solid fa-bag-shopping">  <span id="cart-count">0</span> </i></a>
+    </header>
+    <div id="message" style="
+position: fixed;
+top: 80px;
+right: 20px;
+background: #4caf50;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+display: none;
+z-index: 999;
+"> Product added to cart
+</div>
+<header class="nav2">
+  
+    <a  href="IBRAQ.html" style="color: #D5AFDD;">  Ibrahim ElQurachi</a>
+  
+  
+ <a href="vs.html" >  Victoria  Secret</a> 
+ <a href="abq.html"  >  AbdEssamad  ElQurashi</a>
+ <a href="bathnbody.html" >  Bath &  Body Works </a>
+ <a href="Am.html"> Atyab  El Marshoud</a>
+ <a href="tanayan.html"> Thnyan</a>
+ <a href="asateer.html"> Asateer </a>
+</header>
+    <section class="products">
+      <div class="div1">
+         <img src="misk1.jpg" style="width: 200px;" alt="this is a product photo">
+         <h3> Musk Al-Lail </h3>
+          <p> Prix: 250dh</p>
+          <button onclick="addToCart('Musk Al-Lail',250,'misk1.jpg')">
+            Add to Cart
+        </button>
+
+     </div>
+     <div class="div2">
+           <img src="misk8.jpg" alt="this is a product photo">
+           <h3> Musk Abaq Al-Rumman </h3>
+           <p> Prix: 250dh</p>
+           <button onclick="addToCart('Musk Abaq Al-AL-Rumman',250,'misk8.jpg')">
+            Add to Cart
+        </button>
+     </div>
+        <div class="div3">
+            <img src="misk3.jpg" alt="this is a product photo">
+            <h3> Musk Blue </h3>
+            <p>Prix: 250dh</p>
+            <button onclick="addToCart('Musk Blue',250,'misk3.jpg')">
+                Add to Cart
+            </button>
+     </div>
+        <div class="div4">
+                <img src="misk2.jpg" alt="this is a product photo">
+                <h3> Musk Al-Fajr </h3>
+                <p>Prix: 250dh</p>
+                <button onclick="addToCart('Musk Al-Fajr',250,'misk2.jpg')">
+                    Add to Cart
+                </button>
+        </div>
+        <div class="div5">
+            <img src="e.jpg" style="width: 200px;" alt="this is a product photo">
+            <h3> IBRAQ Musk collection  </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart('IBRAQ Musk collection',550,'e.jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div6">
+            <img src="misk (18).jpg" alt="this is a product photo">
+            <h3> IBRAQ diamond collection  </h3>
+            <p>Prix: 950dh</p>
+            <button onclick="addToCart('IBRAQ diamond collection',950,'misk (18).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div7">
+            <img src="misk (6).jpg" alt="this is a product photo">
+            <h3> IBRAQ diamond collection  </h3>
+            <p>Prix: 550dh</p>
+            <button onclick="addToCart('IBRAQ diamond collection',550,'misk (6).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div8">
+            <img src="misk (7).jpg" alt="this is a product photo">
+            <h3> IBRAQ Musk collection  </h3>
+            <p>Prix: 450dh</p>
+            <button onclick="addToCart('IBRAQ Musk collection',450,'misk (7).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div9">
+            <img src="misk (19).jpg" alt="this is a product photo">
+            <h3> IBRAQ Zouyout collection  </h3>
+            <p>Prix: 450dh</p>
+            <button onclick="addToCart('IBRAQ Zouyout collection',450,'misk (19).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div10">
+            <img src="misk (20).jpg" style="height: 180px;" alt="this is a product photo">
+            <h3> IBRAQ Summer Ocean collection  </h3>
+            <p>Prix: 300dh</p>
+            <button onclick="addToCart('IBRAQ Summer Ocean collection',300,'misk (20).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div11">
+            <img src="misk (9).jpg" style="height: 180px;" alt="this is a product photo">
+            <h3> IBRAQ Summer Ocean collection  </h3>
+            <p>Prix: 300dh</p>
+            <button onclick="addToCart('IBRAQ Summer Ocean collection',300,'misk (9).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div12">
+            <img src="misk (21).jpg" alt="this is a product photo">
+            <h3> Purple heart Diamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Purple heart Diamond ',600,'misk (21).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div13">
+            <img src="misk (10).jpg" alt="this is a product photo">
+            <h3> White Regent Diaamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('White Regent Diaamond ',600,'misk (10).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div14">
+            <img src="misk (11).jpg" alt="this is a product photo">
+            <h3> Emerald Soul Diamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Emerald Soul Diamond',600,'misk (11).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div15">
+            <img src="misk (12).jpg" alt="this is a product photo">
+            <h3> Nude Coral Diamond  </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Nude Coral Diamond',600,'misk (12).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div16">
+            <img src="misk (13).jpg" alt="this is a product photo">
+            <h3> Pink Diamond Sakura </h3>
+            <p>Prix: 600dh</p>
+            <button onclick="addToCart('Pink Diamond Sakura',600,'misk (13).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div17">
+            <img src="misk (22).jpg" alt="this is a product photo">
+            <h3> Sugar Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Sugar Musk',380,'misk (22).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div18">
+            <img src="misk (14).jpg" alt="this is a product photo">
+            <h3> Blueberry Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Blueberry Musk',380,'misk (14).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div19">
+            <img src="misk (15).jpg" alt="this is a product photo">
+            <h3> Rasberry Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Rasberry Musk',380,'misk (15).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div20">
+            <img src="misk (16).jpg" alt="this is a product photo">
+            <h3> Powder Musk  </h3>
+            <p> Prix: 380dh</p>
+            <button onclick="addToCart('Powder Musk',380,'misk (16).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div21">
+            <img src="misk (17).jpg" alt="this is a product photo">
+            <h3> White Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('White Musk',380,'misk (17).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div22">
+            <img src="misk (23).jpg" alt="this is a product photo">
+            <h3> Abaq AL-Rumman Musk  </h3>
+            <p>Prix: 380dh</p>
+            <button onclick="addToCart('Abaq AL-Rumman Musk',380,'misk (23).jpg')">
+                Add to Cart
+            </button>
+        </div>
+        <div class="div23">
+            <img src="misk (24).jpg" alt="this is a product photo">
+            <h3> Vintage Tobacco  </h3>
+            <p>Prix: 1200dh</p>
+            <button onclick="addToCart('Vintage Tobacco',1200,'misk (24).jpg')">
+                Add to Cart
+            </button>
+        </div>
+    </section>
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        function updateCartCount(){
+            document.getElementById("cart-count").innerText = cart.length;
+        }
+        
+        function showMessage(text){
+            const msg = document.getElementById("message");
+            msg.innerText = text;
+            msg.style.display = "block";
+               setTimeout(()=>{
+              msg.style.display = "none";
+             },2000);
+        }
+          function addToCart(name, price, image){
+              const existing = cart.find(item => item.name === name);
+          
+        
+            if(existing){
+                existing.quantity += 1;
+            } else {
+                cart.push({name, price, image, quantity:1});
+            }
+        
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            showMessage("Product added to cart!");
+        }
+        
+        updateCartCount();
+        </script>
+        
+        </body>
+        </html>
